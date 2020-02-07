@@ -1,0 +1,26 @@
+https://www.w3schools.com/howto/howto_css_signup_form.asp
+ate opsionin ose rregj ose logohu mund ta bej si drop down
+session_start();
+$db=mysqli_connect("localhost","root","","hotel");
+if(isset($_POST['regjistrohu'])){
+$username=$_POST['uname'];
+$emri=$_POST['emri'];
+$mbiemri=$_POST['mbiemri'];
+$email=$_POST['email'];
+$password=$_POST['password1'];
+$password2=$_POST['password2'];
+$adresa=$_POST['adresa'];
+if($password1==$password2){
+$password=md5($password);
+$sql=" insert into klient (username,emri,mbiemri,email,password,adresa) values ('$username','$emri','$mbiemri','$email','$password','$adresa')";
+mysqli_query($db,$sql);
+$_SESSION['uname']=$username;
+header("location:index.php");
+
+}
+else{
+echo"Your passwords do not match";
+
+}
+
+duhet kerkimi...shporta...shfaqja random e te dhenave

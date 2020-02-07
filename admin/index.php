@@ -1,7 +1,7 @@
 <?php 
 include("lidhja.php");
 
-
+session_start();
 
 ?>
 
@@ -17,20 +17,23 @@ include("lidhja.php");
             <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
             <div id="linqe">
                 <ul>
-                     <li> <a href="#"> Kryefaqja </a></li>
+                     <li> <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="#"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
                     <li> <a href="gjendja.php"> Gjendja</a></li>
-                    <li> <a href="#">Kerko</a></li>
                     <li> <a href="dilni.php"> Dilni </a></li>
+                  <li style="width:30%"> <form action="kerko.php" method="post">
+                    <input  type="text" name="kerko" placeholder="kerko"> 
+                    <input type="submit" name="kerkimi" value="Kerko"></form></li> 
                 </ul>
             </div>
         </div>
+    <div>
+
+    </div>
 		 <div id="ndarje">
-             
-           
           
     </div> </div>
       <div  height='300px'; width='100%' id="miresevini">

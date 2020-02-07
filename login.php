@@ -15,12 +15,12 @@ session_start();
             <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
             <div id="linqe">
                 <ul>
-                     <li> <a href="#"> Kryefaqja </a></li>
+                     <li> <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="#"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="logrregj.php"> Hyr/Rregjistrohu</a></li>
-                    <li> <a href="#"> Gjendja</a></li>
+               
                     <li> <a href="dilni.php">Dilni</a></li>
                     <li> <a href="#"> Info </a></li>
                 </ul>

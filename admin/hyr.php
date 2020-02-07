@@ -15,7 +15,7 @@ session_start();
             <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
             <div id="linqe">
                 <ul>
-                     <li> <a href="#"> Kryefaqja </a></li>
+                     <li> <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="#"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>

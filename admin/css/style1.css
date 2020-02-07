@@ -35,6 +35,10 @@ ul li{
     text-align:center;
     
 }
+li #krk {
+    width: 30%;
+    height: 100px;
+}
 a{
     text-decoration:none;
     color:white;

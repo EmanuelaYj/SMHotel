@@ -36,39 +36,78 @@ header("location:hyr.php");
             </div>
         </div>
 		 <div id="ndarje">   
-        <div style="height:30%"></div>
-        <div style="background-color:rgba(255,255,255,.5);"><center> <form method="post" action="rezervo.php"><table id="table1">
+        <div style="height:10%"></div>
+        <div style="background-color:rgba(255,255,255,.5);"><center><table id="table1" border="1">
+            <tr>
+                <th style="color:red" colspan="5"> Dhomat </th>
+            </tr>
              <tr>
-                 <td>IDdhom</td>
-                  <td>Emri</td>
-                  <td>Mbiemri</td>
-                  <td>Dhoma</td>
-                  <td>Dita e check in</td>
-                  <td>Dita e check out</td>
+                 <th>IDdhom</th>
+                  <th>LLoji i dhomes</th>
+                  <th>Numri i dhomave</th>
+                  <th>Satusi</th>
+                  <th>Cmimi i dhomes</th>
+                  
             
              </tr>
             
                  <?php
-              $anketim="select * from klient Inner Join porosi on klient.ID=porosi.IDperdorues
-            Inner Join dhoma on porosi.IDdhom=dhoma.IDdhom where status='Zene'";
+            
+              $anketim="select * from dhoma";
              $rezultati=mysqli_query($db,$anketim);
                while($el=mysqli_fetch_array($rezultati)){
                  echo"
 		 <tr>
          <td>".$el['IDdhom']."</td>
-         <td>".$el['emri']."</td>
-		 <td>".$el['mbiemri']."</td>
-		 <td>".$el['llojdhome']."</td>
-          <td>".$el['hyrja']."</td>
-		 <td>".$el['dalja']."</td>
+         <td>".$el['llojdhome']."</td>
+		 <td>".$el['Numri']."</td>
+		 <td>".$el['Status']."</td>
+          <td>".$el['Cmimi']."</td>
+		
   </tr>"; 
                  }
 
-             ?>
+               ?>
+         
              
-         </table> </form>
+         </table> 
+            </br> </br>
+           <table id="table1" border="1">
+            <tr>
+                <th style="color:red" colspan="5"> Dhomat e zena:</th>
+            </tr>
+             <tr>
+                  <th>Id e dhomes:</th>
+                  <th>LLoji i dhomes</th>
+                  <th>Klienti qe e ka zene:</th>
+                  <th>Data e hyrjes:</th>
+                  <th>Data e daljes:</th>
+                  
+            
+             </tr>
+            
+                 <?php
+             $data=date("Y-m-d");
+              echo"</br> <h2> </h2> ";
+               $anketim2="select * from klient  Inner Join porosi on klient.ID=porosi.IDperdorues
+            Inner Join dhoma on porosi.IDdhom=dhoma.IDdhom where porosi.dalja > '$data'";
+             $rezultat2=mysqli_query($db,$anketim2);
+             while($el=mysqli_fetch_array($rezultat2)){
+                 echo"
+		 <tr>
+         <td>".$el['IDdhom']."</td>
+         <td>".$el['llojdhome']."</td>
+		 <td>".$el['perdorues']."</td>
+		 <td>".$el['hyrja']."</td>
+          <td>".$el['dalja']."</td>
+		
+  </tr>"; 
+                 }
+
+               ?>
+          
              
-             </center> </div></div> 
+          </table>   </center> </div></div> 
 </div>
         
         

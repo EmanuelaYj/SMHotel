@@ -40,8 +40,8 @@ $perdorues=$_SESSION['id_admin'];
         <div style="background-color:rgba(255,255,255,.5);"><center> <table id="table2"> <form method="post" action="rezervo.php">
              <tr>
                  <th>Dhoma</th>
-                  <th>Dita e check in</th>
-                  <th>Dita e check out</th>
+                  <th>Dita e hyrjes</th>
+                  <th>Dita e daljes</th>
             
              </tr>  <tr><td> 
             <?php 
@@ -52,7 +52,7 @@ $perdorues=$_SESSION['id_admin'];
 				{
 					while($el = mysqli_fetch_array($rez)){
 					
-                   echo"  <option value=".$el['IDdhom'].">". $el['llojdhome']."</option> "; }}
+                   echo"  <option value=".$el['IDdhom'].">". $el['llojdhome']."-$". $el['Cmimi']."</option> "; }}
                    echo "</select>";
             ?>
                       </td>

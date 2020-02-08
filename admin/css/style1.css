@@ -45,7 +45,7 @@ a{
 }
 #ndarje {
     width: 100%;
-    height: 400px;
+    height:100%;
     background-image: url("../img/hotel.jpg");
     background-repeat:no-repeat;
     background-size:100% auto;

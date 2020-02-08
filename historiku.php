@@ -1,17 +1,19 @@
 <?php
+
+
 include("lidhja.php");
 session_start();
-if(!isset($_SESSION['admini'])) {
-header("location:hyr.php");
+if(!isset($_SESSION['perdorues'])) {
+header("location:login.php");
 }
-
+$perdorues=$_SESSION['id_perdorues'];
 
 
 
 ?>
 
 <html> <title>Sistem Menaxhimi Hoteli</title>
- <link rel="stylesheet" type="text/css" href="css/style1.css"/>
+ <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
@@ -23,15 +25,13 @@ header("location:hyr.php");
             <div id="linqe">
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					 
+					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="anullo.php"> Anullo</a></li>
+                   <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
                     <li> <a href="#"> Gjendja</a></li>
-                   <li> <a href="#"> Info </a></li>
-                     <li style="width:30%"> <form action="kerko.php" method="post">
-                    <input  type="text" name="kerko" placeholder="kerko"> 
-                    <input type="submit" name="kerkimi" value="Kerko"></form></li> 
+                   <li> <a href="dilni.php">Dilni</a></li>
+                    <li> <a href="#"> Info </a></li>
                 </ul>
             </div>
         </div>
@@ -50,7 +50,7 @@ header("location:hyr.php");
             
                  <?php
               $anketim="select * from klient Inner Join porosi on klient.ID=porosi.IDperdorues
-            Inner Join dhoma on porosi.IDdhom=dhoma.IDdhom where status='Zene'";
+            Inner Join dhoma on porosi.IDdhom=dhoma.IDdhom where porosi.IDperdorues='$perdorues'";
              $rezultati=mysqli_query($db,$anketim);
                while($el=mysqli_fetch_array($rezultati)){
                  echo"
@@ -75,3 +75,4 @@ header("location:hyr.php");
                 
 </body>
 </html>
+?>

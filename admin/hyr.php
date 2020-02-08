@@ -16,13 +16,15 @@ session_start();
             <div id="linqe">
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="#"> Historiku  </a></li> 
+					 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
                     <li> <a href="gjendja.php"> Gjendja</a></li>
-                    <li> <a href="#">Kerko</a></li>
-                    <li> <a href="#"> Info </a></li>
+<li> <a href="#"> Info </a></li>
+                     <li style="width:30%"> <form action="kerko.php" method="post">
+                    <input  type="text" name="kerko" placeholder="kerko"> 
+                    <input type="submit" name="kerkimi" value="Kerko"></form></li> 
                 </ul>
             </div>
         </div>
@@ -58,8 +60,14 @@ session_start();
              $rezultati= mysqli_query($db,$anketim1);
              
             if (mysqli_num_rows($rezultati)>0){
+            while( $el=mysqli_fetch_assoc($rezultati)){
+             $admini=$el['ID'];
+                } 
+          
+           $_SESSION['id_admin']=$id;
             $_SESSION['admini']=$admini;
-          header("location:index.php");}
+          header("location:index.php");
+                }
 
              else{
              echo "<script> alert('Ju keni vene vlera te pasakta') </script>";

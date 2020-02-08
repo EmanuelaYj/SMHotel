@@ -3,7 +3,7 @@ include("lidhja.php");
 
 session_start();
 
-?>
+?> 
 
 <html> <title>Sistem Menaxhimi Hoteli</title>
  <link rel="stylesheet" type="text/css" href="css/style1.css"/>

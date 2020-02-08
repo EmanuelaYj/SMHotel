@@ -16,7 +16,7 @@ session_start();
             <div id="linqe">
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="#"> Historiku  </a></li> 
+					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="logrregj.php"> Hyr/Rregjistrohu</a></li>

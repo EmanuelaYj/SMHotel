@@ -10,40 +10,37 @@ $perdorues=$_SESSION['id_perdorues'];
 
 ?>
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
  <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
-                     <li> <a href="index.php"> Kryefaqja </a></li>
+                     <li > <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
+                    <li class="aktive"> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="logrregj.php"> Hyr/Rregjistrohu</a></li>
-                    
-                    <li> <a href="dilni.php">Dilni</a></li>
-                    <li> <a href="#"> Info </a></li>
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">   
+                    <li> <a href="login.php"> Hyr</a></li>
+             <li> <a href="rregjistrohu.php"> Rregjistrohu</a></li>
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                </ul> </div>
+<div class="titulli">
         <div style="height:30%"></div>
-        <div style="background-color:rgba(255,255,255,.5);"><center> <table id="table2"> <form method="post" action="rezervo.php">
+        <div style="background-color:rgba(255,255,255,.5);"><center> <table id="tabela1"> <form method="post" action="rezervo.php">
              <tr>
                  <th>Dhoma</th>
-                  <th>Dita e check in</th>
-                  <th>Dita e check out</th>
+                  <th>Dita e hyrjes</th>
+                  <th>Dita e daljes</th>
             
              </tr>  <tr><td> 
             <?php 
-            echo" <select name='lloji'>";
+            echo" <select name='lloji' id='selekto'>";
 				$anketim = "SELECT * FROM dhoma";
 				$rez = mysqli_query($db, $anketim);
 				if(mysqli_num_rows($rez) > 0)
@@ -71,17 +68,16 @@ $perdorues=$_SESSION['id_perdorues'];
              echo "<script> alert('Ju lutem jepni datat e sakta te hyrjes dhe daljes!')</script>";
              else{
             $anketim1="SELECT * FROM dhoma where IDdhom='$lloji' and status='Lire'";
-            $rez=mysqli_num_rows(mysqli_query($db,$anketim1));
+            $rezultati1=mysqli_query($db,$anketim1);
+            $rez=mysqli_num_rows($rezultati1);
             if($rez>0){
             $anketim2="insert into porosi (IDperdorues,IDdhom,hyrja,dalja) value ('$perdorues','$lloji','$hyrja','$dalja')";
             mysqli_query($db,$anketim2);
-            $anketim3="update dhoma set Numri=Numri-1 where  IDdhom='$lloji'";
-            mysqli_query($db,$anketim3);
-
-           while($el=mysqli_fetch_assoc(mysqli_query($db,$anketim1))) {
+           
+            while($el=mysqli_fetch_assoc(mysqli_query($db,$anketim1))) {
               if( $el['Numri']==0){
-              $anketim4="update dhoma set status='Zene' where IDdhom='".$el['IDdhom']."'";
-              mysqli_query($db,$anketim4);
+              $anketim3="update dhoma set status='Zene', Numri=Numri-1 where IDdhom='".$el['IDdhom']."' ";
+              mysqli_query($db,$anketim3);
             }
             }
             }

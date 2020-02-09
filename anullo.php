@@ -1,49 +1,57 @@
 <?php
 include("lidhja.php");
+session_start();
+if(!isset($_SESSION['perdorues'])) {
+header("location:login.php");
+}
+
 ?>
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
  <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
-                     <li> <a href="#"> Kryefaqja </a></li>
-					  <li> <a href="#"> Historiku  </a></li> 
+                     <li > <a href="index.php"> Kryefaqja </a></li>
+					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="#"> Anullo</a></li>
-                    <li> <a href="logrregj.php"> Hyr/Rregjistrohu</a></li>
-                    <li> <a href="#"> Gjendja</a></li>
-                    <li> <a href="#">Kerko</a></li>
-                    <li> <a href="#"> Info </a></li>
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">
-            <div style="height:30%"> Zgjidhni rezervimin qe doni te anulloni: </div>
-        <div style="background-color:rgba(255,255,255,.5);"><center> <form method="post" action="anullo.php"><table id="table2">
+                    <li> <a href=" class="aktive"> Anullo</a></li>
+                    <li> <a href="login.php"> Hyr</a></li>
+             <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                </ul> </div>
+<div class="titulli">
+            <div style="height:30%"> <h2 style="color:yellow">Zgjidhni rezervimin qe doni te anulloni:</h2> </br></div>
+       <div style="background-color:rgba(255,255,255,.5);"><center> <table id="tabela1"> <form method="post" action="anullo.php">
              <tr>
-                 <th> Jepni dhomen</th>
-                  <th>Diten e hyrjes</th>
-                  <th>Diten e daljes</th>
+                 <th>Dhoma</th>
+                  <th>Dita e check in</th>
+                  <th>Dita e check out</th>
             
-             </tr>
-             <tr>
-                 <td><select name="lloji">
-            <option>Dhome teke</option>
-            <option>Dhome cifte</option>
-            <option>Dhome familjare</option>
-            <option>Suite</option> </select></td>
+             </tr>  <tr><td> 
+            <?php 
+            echo" <select name='lloji' id='selekto'>";
+				$anketim = "SELECT * FROM dhoma";
+				$rez = mysqli_query($db, $anketim);
+				if(mysqli_num_rows($rez) > 0)
+				{
+					while($el = mysqli_fetch_array($rez)){
+					
+                   echo"  <option value=".$el['IDdhom'].">". $el['llojdhome']."</option> "; }}
+                   echo "</select>";
+            ?>
+                      </td>
                  <td> <input type="date"  name="hyrja" /></td>
                  <td><input type="date" name="dalja"/></td>
-                 
-                 <td> <input type="submit" value="Anullo" name="anullo" /></td>
+                 <td> <input type="submit" value="Anullo" name="anullo" /> </td>
+                
                   
              </tr>
          </table> </form>
@@ -52,11 +60,20 @@ include("lidhja.php");
              $hyrja=$_POST['hyrja'];
               $dalja=$_POST['dalja'];
                $lloji=$_POST['lloji'];
+               $id=$_SESSION['id_perdorues'];
               if($dalja>$hyrja){
-            $anketim1="delete from dhoma where llojdhome='$lloji' and hyrja='$hyrja' and dalja='$dalja'";
-              mysqli_query($db,$anketim1);
+               $data=date("Y-m-d");
+              echo"</br> <h2> </h2> ";
+            $anketim1="delete from porosi where hyrja='$hyrja' and dalja='$dalja' and  dalja > '$data' and IDperdorues='$id' and IDdhom='$lloji'";
+             if( mysqli_query($db,$anketim1)){
+             
+             $anketim="update dhoma set status='Lire', Numri=Numri+1 where IDdhom='$lloji' ";
+               mysqli_query($db,$anketim);
+           }
+           
+              
             }
-            else echo"Ju lutem jepni datat e sakta te hyrjes dhe daljes!";
+            else echo"Ju nuk keni nje rezervim qe mund te anulloni";
                
               
             }

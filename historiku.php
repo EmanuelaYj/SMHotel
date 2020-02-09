@@ -12,39 +12,36 @@ $perdorues=$_SESSION['id_perdorues'];
 
 ?>
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
  <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
-                     <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="historiku.php"> Historiku  </a></li> 
+                     <li > <a href="index.php"> Kryefaqja </a></li>
+					  <li class="aktive"> <a href="historiku.php"> Historiku  </a></liclass="aktive"> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
-                   <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
-                    <li> <a href="#"> Gjendja</a></li>
-                   <li> <a href="dilni.php">Dilni</a></li>
-                    <li> <a href="#"> Info </a></li>
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">   
-        <div style="height:30%"></div>
-        <div style="background-color:rgba(255,255,255,.5);"><center> <form method="post" action="rezervo.php"><table id="table1">
+                    <li> <a href="#"> Anullo</a></li>
+                    <li> <a href="login.php"> Hyr</a></li>
+             <li> <a href="rregjistrohu.php"> Rregjistrohu</a></li>
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                </ul> </div>
+<div class="titulli">
+        
+        <div style="background-color:rgba(255,255,255,.5);"><center> <form method="post" action="rezervo.php"><table id="tabela1"> <tbody>
              <tr>
-                 <td>IDdhom</td>
-                  <td>Emri</td>
-                  <td>Mbiemri</td>
-                  <td>Dhoma</td>
-                  <td>Dita e check in</td>
-                  <td>Dita e check out</td>
+                 <th>IDdhom</th>
+                  <th>Emri</th>
+                  <th>Mbiemri</th>
+                  <th>Dhoma</th>
+                  <th>Dita e hyrjes</th>
+                  <th>Dita e daljes</th>
             
              </tr>
             
@@ -65,11 +62,11 @@ $perdorues=$_SESSION['id_perdorues'];
                  }
 
              ?>
-             
+       </tbody>      
          </table> </form>
              
              </center> </div></div> 
-</div>
+
         
         
                 

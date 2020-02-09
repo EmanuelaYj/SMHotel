@@ -3,31 +3,28 @@ include("lidhja.php");
 
 
 ?>
-<html> <title>Sistem Menaxhimi Hoteli</title>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
  <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
-                     <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="#"> Historiku  </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="#"> Anullo</a></li>
-                    <li> <a href="logrregj.php"> Hyr/Rregjistrohu</a></li>
-            
-                   <li> <a href="dilni.php">Dilni</a></li>
-                    <li> <a href="#"> Info </a></li>
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">
-            <h2>Rregjistrohu!</h2>
+                     <li > <a href="index.php"> Kryefaqja </a></li>
+					  <li> <a href="historiku.php"> Historiku  </a></li> 
+                    <li > <a href="rezervo.php"> Rezervo</a></li>
+                    <li> <a href="anullo.php"> Anullo</a></li>
+                    <li> <a href="login.php"> Hyr</a></li>
+             <li class="aktive"> <a href="regjistrimi.php"> Rregjistrohu</a></li>
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                </ul> </div>
+<div class="titulli">
+            <h2 style="color:yellow">Rregjistrohu!</h2> </br>
             <div style="background-color:rgba(255,255,255,.5);">
             <form method="post" action="regjistrimi.php"> 
                 <table id="tabela1">

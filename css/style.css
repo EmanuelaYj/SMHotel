@@ -58,6 +58,13 @@ ul li.aktive a {
     top: 80%;
     left: 50%;
     transform: translate(-50%,-50%);
+
+}
+.shume1 {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .buton{
     border:1px solid white;
@@ -125,7 +132,7 @@ ul li.aktive a {
 
  }
 table#tabela1 td{
-    padding: 10px 10px;
+    padding: 5px 5px;
 }
 table#tabela1 tbody tr {
     border-bottom: 1px solid #dddddd;
@@ -135,7 +142,7 @@ table#tabela1 tbody tr:nth-of-type(2n+1){
 }
 #selekto {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;
@@ -157,7 +164,7 @@ input[type=date] {
     font-family: sans-serif;
     color: #444;
     border-radius: .5em;
-    width: 100%;
+    width: 80%;
     max-width: 100%;
     box-sizing: border-box;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);

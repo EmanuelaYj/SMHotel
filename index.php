@@ -13,13 +13,11 @@
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="login.php"> Hyr</a></li>
-             <li> <a href="rregjistrohu.php"> Rregjistrohu</a></li>
+                    <li> <a href="hyr.php"> Hyr</a></li>
+             <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
                   <li> <a href="dilni.php">Dilni</a></li>
-                     <li style="width:10%"> <form action="kerko.php" method="post">
-                    <input  type="text" name="kerko" placeholder="kerko"> 
-                    <input type="submit" name="kerkimi" value="Kerko"></form></li> 
+                     
                  
                 </ul> </div>
 <div class="titulli">

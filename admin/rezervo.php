@@ -4,7 +4,7 @@ include("lidhja.php");
 session_start();
 if(!isset($_SESSION['admini'])){
 echo"<script>alert('Ju lutem logohuni!')</script>";
-header("location:login.php");
+header("location:hyr.php");
 }
 $perdorues=$_SESSION['id_admin'];
 

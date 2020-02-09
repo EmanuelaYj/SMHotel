@@ -2,7 +2,7 @@
 include("lidhja.php");
 session_start();
 if(!isset($_SESSION['perdorues'])) {
-header("location:login.php");
+header("location:hyr.php");
 }
 
 ?>
@@ -21,7 +21,7 @@ header("location:login.php");
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href=" class="aktive"> Anullo</a></li>
-                    <li> <a href="login.php"> Hyr</a></li>
+                    <li> <a href="hyr.php"> Hyr</a></li>
              <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
                   <li> <a href="dilni.php">Dilni</a></li>
@@ -65,10 +65,17 @@ header("location:login.php");
                $data=date("Y-m-d");
               echo"</br> <h2> </h2> ";
             $anketim1="delete from porosi where hyrja='$hyrja' and dalja='$dalja' and  dalja > '$data' and IDperdorues='$id' and IDdhom='$lloji'";
+
              if( mysqli_query($db,$anketim1)){
              
-             $anketim="update dhoma set status='Lire', Numri=Numri+1 where IDdhom='$lloji' ";
+             $anketim="update dhoma set  Numri=Numri+1 where IDdhom='$lloji' ";
                mysqli_query($db,$anketim);
+                $anketim4="SELECT * FROM dhoma where IDdhom='$lloji'";
+            while($el=mysqli_fetch_assoc(mysqli_query($db,$anketim4))) {
+              if( $el['Numri']>2){
+              $anketim5="update dhoma set Numri=Numri-1 ";
+              mysqli_query($db,$anketim5);
+            }
            }
            
               
@@ -76,7 +83,7 @@ header("location:login.php");
             else echo"Ju nuk keni nje rezervim qe mund te anulloni";
                
               
-            }
+            } }
 
              ?>
          </div>

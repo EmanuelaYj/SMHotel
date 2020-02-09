@@ -27,6 +27,7 @@ session_start();
                  
                 </ul> </div>
 <div class="titulli">
+     
             <h2 style="color:yellow">Logohu!</h2>
      
             <div style="background-color:rgba(255,255,255,.5);">
@@ -44,7 +45,10 @@ session_start();
                     <td ><input type="submit" value="Hyr" name="hyr" />  </td>
                 
                 </tr>
-            </table></form>
+            </table></form> <div class="shume1">
+            <a class="buton" href="../hyr.php">Futu si perdorues</a>
+
+        </div>
                 <?php
 
   if(isset($_POST['hyr'])){

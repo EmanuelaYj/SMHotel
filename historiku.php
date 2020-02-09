@@ -4,7 +4,7 @@
 include("lidhja.php");
 session_start();
 if(!isset($_SESSION['perdorues'])) {
-header("location:login.php");
+header("location:hyr.php");
 }
 $perdorues=$_SESSION['id_perdorues'];
 
@@ -26,8 +26,8 @@ $perdorues=$_SESSION['id_perdorues'];
 					  <li class="aktive"> <a href="historiku.php"> Historiku  </a></liclass="aktive"> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="#"> Anullo</a></li>
-                    <li> <a href="login.php"> Hyr</a></li>
-             <li> <a href="rregjistrohu.php"> Rregjistrohu</a></li>
+                    <li> <a href="hyr.php"> Hyr</a></li>
+             <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
                   <li> <a href="dilni.php">Dilni</a></li>
                  

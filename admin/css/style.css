@@ -61,6 +61,12 @@ ul li.aktive a {
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.shume1 {
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 .buton{
     border:1px solid white;
     padding: 10px 30px;

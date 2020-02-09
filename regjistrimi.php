@@ -17,7 +17,7 @@ include("lidhja.php");
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li > <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="login.php"> Hyr</a></li>
+                    <li> <a href="hyr.php"> Hyr</a></li>
              <li class="aktive"> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
                   <li> <a href="dilni.php">Dilni</a></li>
@@ -26,7 +26,7 @@ include("lidhja.php");
 <div class="titulli">
             <h2 style="color:yellow">Rregjistrohu!</h2> </br>
             <div style="background-color:rgba(255,255,255,.5);">
-            <form method="post" action="regjistrimi.php"> 
+            <form method="post" action="regjistrimi.php" autocomplete=off> 
                 <table id="tabela1">
                 <tr>
                     <td> <b>Perdoruesi:</b></td>

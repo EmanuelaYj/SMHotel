@@ -10,41 +10,39 @@ header("location:hyr.php");
 
 ?>
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
- <link rel="stylesheet" type="text/css" href="css/style1.css"/>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
+ <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					 
+					  <li   class="aktive"> <a href="gjendja.php"> Gjendja </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
-                    <li> <a href="#"> Gjendja</a></li>
-                   <li> <a href="#"> Info </a></li>
-                     <li style="width:30%"> <form action="kerko.php" method="post">
+            
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                     <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">   
+                 
+                </ul> </div>
+<div class="titulli">
         <div style="height:10%"></div>
-        <div style="background-color:rgba(255,255,255,.5);"><center><table id="table1" border="1">
+        <div style="background-color:rgba(255,255,255,.5);"><center><table id="tabela1" >
             <tr>
                 <th style="color:red" colspan="5"> Dhomat </th>
             </tr>
              <tr>
-                 <th>IDdhom</th>
+                 <th>Id e dhomes</th>
                   <th>LLoji i dhomes</th>
-                  <th>Numri i dhomave</th>
+                  <th>Numri i dhomave/lloj</th>
                   <th>Satusi</th>
                   <th>Cmimi i dhomes</th>
                   
@@ -72,7 +70,7 @@ header("location:hyr.php");
              
          </table> 
             </br> </br>
-           <table id="table1" border="1">
+           <table id="tabela1">
             <tr>
                 <th style="color:red" colspan="5"> Dhomat e zena:</th>
             </tr>

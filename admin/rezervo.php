@@ -10,34 +10,32 @@ $perdorues=$_SESSION['id_admin'];
 
 ?>
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
- <link rel="stylesheet" type="text/css" href="css/style1.css"/>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
+ <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="gjendja.php"> Gjendja  </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
+					  <li > <a href="gjendja.php"> Gjendja </a></li> 
+                    <li   class="aktive"> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
-                     <li> <a href="dilni.php">Dilni</a></li>
-                    <li> <a href="#"> Info </a></li>
-                     <li style="width:30%"> <form action="kerko.php" method="post">
+            
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                     <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje">   
+                 
+                </ul> </div>
+<div class="titulli">
         <div style="height:30%"></div>
-        <div style="background-color:rgba(255,255,255,.5);"><center> <table id="table2"> <form method="post" action="rezervo.php">
+        <div style="background-color:rgba(255,255,255,.5);"><center> <table id="tabela1"> <form method="post" action="rezervo.php">
              <tr>
                  <th>Dhoma</th>
                   <th>Dita e hyrjes</th>
@@ -45,7 +43,7 @@ $perdorues=$_SESSION['id_admin'];
             
              </tr>  <tr><td> 
             <?php 
-            echo" <select name='lloji'>";
+            echo" <select name='lloji' id='selekto'>";
 				$anketim = "SELECT * FROM dhoma";
 				$rez = mysqli_query($db, $anketim);
 				if(mysqli_num_rows($rez) > 0)

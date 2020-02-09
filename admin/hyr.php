@@ -3,33 +3,31 @@ include("lidhja.php");
 session_start();
 
 ?>
-<html> <title>Sistem Menaxhimi Hoteli</title>
- <link rel="stylesheet" type="text/css" href="css/style1.css"/>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
+ <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
-					 
+					  <li> <a href="gjendja.php"> Gjendja </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
-                    <li> <a href="gjendja.php"> Gjendja</a></li>
-<li> <a href="#"> Info </a></li>
-                     <li style="width:30%"> <form action="kerko.php" method="post">
+                    <li  class="aktive"> <a href="hyr.php"> Hyr</a></li>
+            
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                     <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
-                </ul>
-            </div>
-        </div>
-		 <div id="ndarje"> 
-            <h2>Logohu!</h2>
+                 
+                </ul> </div>
+<div class="titulli">
+            <h2 style="color:yellow">Logohu!</h2>
      
             <div style="background-color:rgba(255,255,255,.5);">
             <form method="post" action="hyr.php">

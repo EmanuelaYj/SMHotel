@@ -1,7 +1,10 @@
 <?php
 include("lidhja.php");
-
 session_start();
+if(!isset($_SESSION['admini'])) {
+header("location:hyr.php");
+}
+
 if(isset($_POST['kerkimi'])){
 
   $kerko=$_POST['kerko'];

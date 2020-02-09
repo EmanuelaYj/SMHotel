@@ -5,78 +5,45 @@ session_start();
 
 ?> 
 
-<html> <title>Sistem Menaxhimi Hoteli</title>
- <link rel="stylesheet" type="text/css" href="css/style1.css"/>
+<html> 
+<title>SISTEM MENAXHIMI HOTELI </title>
+ <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
 </head>
 <body>
-    <div id="hyrje">
-
-        <div id="koka">
-		
-            <div id="logo"> <h1> Sistem menaxhim hoteli </h1></div>
-            <div id="linqe">
+    <header> 
+       <div id="hyrje">
+          
                 <ul>
-                     <li> <a href="index.php"> Kryefaqja </a></li>
-					  <li> <a href="#"> Historiku  </a></li> 
+                     <li class="aktive"> <a href="index.php"> Kryefaqja </a></li>
+					  <li> <a href="gjendja.php"> Gjendja </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
                     <li> <a href="hyr.php"> Hyr</a></li>
-                    <li> <a href="gjendja.php"> Gjendja</a></li>
-                    <li> <a href="dilni.php"> Dilni </a></li>
-                  <li style="width:30%"> <form action="kerko.php" method="post">
+            
+              <li> <a href="info.php"> Info </a></li>
+                  <li> <a href="dilni.php">Dilni</a></li>
+                     <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
-                </ul>
-            </div>
+                 
+                </ul> </div>
+<div class="titulli">
+      <h1>SISTEM MENAXHIMI HOTELI </h1>  </br> </br>
+    <span id="pershkrim">
+        Ky sistem sherben per te kryer rezervim online ne nje hotel specifik. 
+    Ky produkt u nejvoitet hoteleve,qe te kene mundesi per te paraqitur  gjendjen ne hotel, 
+      si edhe per klientet qe do kene mundesi te rezervojne dhoma online kur te duan.
+
+    </span></div>
+        <div class="shume">
+            <a class="buton" href="info.php">Me shume mbi dhomat tona</a>
+
         </div>
-    <div>
 
-    </div>
-		 <div id="ndarje">
+ </header></body> </html>
+
+
+
           
-    </div> </div>
-      <div  height='300px'; width='100%' id="miresevini">
-                 <h1 style="color:red" align="center">Miresevini ne hotelin tone!</h1>
-             <center><font size="4">
-                  It is the most famous and sophisticated address in town and the first hotel in Albania to be built according to international standards, 
-                 located directly on Dëshmorët e Kombit Boulevard, in the heart of Tirana. </br>
-                 Our hospitality and service, the comfort and security make the hotel the meeting place of the economical, diplomatic and cultural elite of Albania.</br>
-                 The seat of the Parliament, the President's Office, the Prime Minister's Office and many diplomatic embassies are within walking distance. </br>
-                 Our famous Mediterranean garden with 30.000 square meters unrivalled within Albania is an oasis of tranquillity and recreation in the centre of bustling Tirana. </br> </br>
-</font>
- </center>
-
-        <h2 align="center" style="color:red">Dhomat tona!</h2>
- </div> <div id="foto">
-    <div id="nje">
-        <img  src="img/1.jpg"> 
-        <center> <h2>Dhoma teke.</h2></center>
-    </div>
-        <div id="dy">
-        <img  src="img/2.jpg" > 
-        <center> <h2>Dhoma cift.</h2></center>
-    </div>
-   
-        <div id="tre">
-        <img  src="img/3.jpg" > 
-        <center> <h2>Dhoma familjare.</h2></center>
-    </div>
-        <div id="kater">
-        <img  src="img/4.jpg" "> 
-        <center> <h2>Suita.</h2></center>
-    </div></div>
-
-
-</body> </html>
-
-</html>
-
-
-
-
-
-
-
-
-
+    

@@ -15,10 +15,11 @@
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
+                   <?php if(!isset($_SESSION['perdorues'])){ ?>  <li> <a href="hyr.php"> Hyr</a></li> <?php } ?>
              <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li class="aktive"> <a href="#"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                   <?php if(isset($_SESSION['perdorues'])){ ?>    <li> <a href="dilni.php">Dilni</a></li>  <?php } ?>
                  
                 </ul> </div>
          <div id="fotot" >

@@ -17,13 +17,13 @@ session_start();
                 <ul>
                      <li class="aktive"> <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="gjendja.php"> Gjendja </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
+                  
+                   
+                   <?php if(!isset($_SESSION['admini'])){ ?>  <li> <a href="hyr.php"> Hyr</a></li> <?php } ?>
             
               <li> <a href="info.php"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
-                     <li> <form action="kerko.php" method="post">
+              <?php if(isset($_SESSION['admini'])){ ?>    <li> <a href="dilni.php">Dilni</a></li>  <?php } ?>
+                     <li> <form action="kerko.php" method="post"> 
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
                  

@@ -22,18 +22,17 @@ header("location:hyr.php");
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
 					  <li   class="aktive"> <a href="gjendja.php"> Gjendja </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
+                 
+                      <?php if(!isset($_SESSION['admini'])){ ?>  <li> <a href="hyr.php"> Hyr</a></li> <?php } ?>
             
               <li> <a href="info.php"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
+                    <?php if(isset($_SESSION['admini'])){ ?>    <li> <a href="dilni.php">Dilni</a></li>  <?php } ?>
                      <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
                  
                 </ul> </div>
-<div class="titulli">
+<div class="titulli" w>
         <div style="height:10%"></div>
         <div style="background-color:rgba(255,255,255,.5);"><center><table id="tabela1" >
             <tr>

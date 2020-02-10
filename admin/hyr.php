@@ -15,12 +15,12 @@ session_start();
                 <ul>
                      <li> <a href="index.php"> Kryefaqja </a></li>
 					  <li> <a href="gjendja.php"> Gjendja </a></li> 
-                    <li> <a href="rezervo.php"> Rezervo</a></li>
-                    <li> <a href="anullo.php"> Anullo</a></li>
+                   
+                   
                     <li  class="aktive"> <a href="hyr.php"> Hyr</a></li>
             
               <li> <a href="info.php"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
+       
                      <li> <form action="kerko.php" method="post">
                     <input  type="text" name="kerko" placeholder="kerko"> 
                     <input type="submit" name="kerkimi" value="Kerko"></form></li> 
@@ -35,11 +35,11 @@ session_start();
              <table id="tabela1">
                 <tr>
                     <td> <b>Administratori:</b></td>
-                    <td>  <input type="text" name="admini" placeholder="Jepni perdoruesin" /></td>
+                    <td>  <input type="text" name="admini" placeholder="Jepni adminuistratorin" required/></td>
                 </tr>
            <tr>
                     <td><b>Fjalekalimi</b></td>
-                   <td><input type="password" name="fjalekalim1" placeholder="Fusni fjalekalimin" /></td>
+                   <td><input type="password" name="fjalekalim1" placeholder="Fusni fjalekalimin" required/></td>
                 </tr>
             <tr>
                     <td ><input type="submit" value="Hyr" name="hyr" />  </td>

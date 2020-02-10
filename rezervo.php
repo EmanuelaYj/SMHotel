@@ -24,10 +24,11 @@ $perdorues=$_SESSION['id_perdorues'];
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li class="aktive"> <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
+                    <?php if(!isset($_SESSION['perdorues'])){ ?>  <li> <a href="hyr.php"> Hyr</a></li> <?php } ?>
              <li> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                   <?php if(isset($_SESSION['perdorues'])){ ?>    <li> <a href="dilni.php">Dilni</a></li>  <?php } ?>
                  
                 </ul> </div>
 <div class="titulli">
@@ -58,7 +59,7 @@ $perdorues=$_SESSION['id_perdorues'];
                   
              </tr>
          </table> </form>
-           <?php 
+          <?php 
            
             if(isset($_POST['rezervo'])){
            $lloji=$_POST['lloji']; 
@@ -68,18 +69,17 @@ $perdorues=$_SESSION['id_perdorues'];
              echo "<script> alert('Ju lutem jepni datat e sakta te hyrjes dhe daljes!')</script>";
              else{
             $anketim1="SELECT * FROM dhoma where IDdhom='$lloji' and status='Lire'";
-            $rezultati1=mysqli_query($db,$anketim1);
-            $rez=mysqli_num_rows($rezultati1);
+            $rez=mysqli_num_rows(mysqli_query($db,$anketim1));
             if($rez>0){
             $anketim2="insert into porosi (IDperdorues,IDdhom,hyrja,dalja) value ('$perdorues','$lloji','$hyrja','$dalja')";
             mysqli_query($db,$anketim2);
-            $anketim3="update dhoma  set  Numri=Numri-1 where IDdhom='$lloji' ";
-              mysqli_query($db,$anketim3);
-               $anketim4="SELECT * FROM dhoma where IDdhom='$lloji'";
-            while($el=mysqli_fetch_assoc(mysqli_query($db,$anketim4))) {
+            $anketim3="update dhoma set Numri=Numri-1 where  IDdhom='$lloji'";
+            mysqli_query($db,$anketim3);
+
+           while($el=mysqli_fetch_assoc(mysqli_query($db,$anketim1))) {
               if( $el['Numri']==0){
-              $anketim5="update dhoma set status='Zene' where IDdhom='$lloji'";
-              mysqli_query($db,$anketim5);
+              $anketim4="update dhoma set status='Zene' where IDdhom='".$el['IDdhom']."'";
+              mysqli_query($db,$anketim4);
             }
             }
             }
@@ -104,4 +104,5 @@ $perdorues=$_SESSION['id_perdorues'];
          
               
            ?> 
+           
 

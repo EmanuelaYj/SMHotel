@@ -17,36 +17,37 @@ include("lidhja.php");
 					  <li> <a href="historiku.php"> Historiku  </a></li> 
                     <li > <a href="rezervo.php"> Rezervo</a></li>
                     <li> <a href="anullo.php"> Anullo</a></li>
-                    <li> <a href="hyr.php"> Hyr</a></li>
+                  <?php if(!isset($_SESSION['perdorues'])){ ?>  <li> <a href="hyr.php"> Hyr</a></li> <?php } ?>
              <li class="aktive"> <a href="regjistrimi.php"> Rregjistrohu</a></li>
               <li> <a href="info.php"> Info </a></li>
-                  <li> <a href="dilni.php">Dilni</a></li>
+                 
+                   <?php if(isset($_SESSION['perdorues'])){ ?>    <li> <a href="dilni.php">Dilni</a></li>  <?php } ?>
                  
                 </ul> </div>
 <div class="titulli">
-            <h2 style="color:yellow">Rregjistrohu!</h2> </br>
+            <h2 style="color:yellow">Regjistrohu!</h2> </br>
             <div style="background-color:rgba(255,255,255,.5);">
             <form method="post" action="regjistrimi.php" autocomplete=off> 
                 <table id="tabela1">
                 <tr>
                     <td> <b>Perdoruesi:</b></td>
-                    <td>  <input type="text" name="perdorues" placeholder="Jepni perdoruesin" /></td>
+                    <td>  <input type="text" name="perdorues" placeholder="Jepni perdoruesin" required/></td>
                 </tr>
                 <tr>
                     <td><b>Emri</b>:</td>
-                   <td> <input type="text" name="emri"  placeholder="Jepni emrin" /> </td>
+                   <td> <input type="text" name="emri"  placeholder="Jepni emrin" required /> </td>
                 </tr>
                   <tr>
                     <td><b>Mbiemri:</b></td>
-                   <td> <input type="text" name="mbiemri" title="mbiemri" placeholder="Jepni mbiemrin" /></td>
+                   <td> <input type="text" name="mbiemri" title="mbiemri" placeholder="Jepni mbiemrin" required/></td>
                 </tr>
                   <tr>
                     <td><b>Fjalekalimi</b></td>
-                   <td><input type="password" name="fjalekalim1" placeholder="Fusni fjalekalimin" /></td>
+                   <td><input type="password" name="fjalekalim1" placeholder="Fusni fjalekalimin" required /></td>
                 </tr>
                 <tr>
                     <td><b>Ri-fut fjalekalim-in:</b></td>
-                   <td><input type="password" name="fjalekalim2" placeholder="Ri-fusni fjalekalimin" /></td>
+                   <td><input type="password" name="fjalekalim2" placeholder="Ri-fusni fjalekalimin" required/></td>
                 </tr>
                   <tr>
                     <td><b>Posta elektronike:</b></td>
@@ -54,7 +55,7 @@ include("lidhja.php");
                 </tr>
                   <tr>
                     <td><b>Adresa:</b></td>
-                   <td><textarea cols="30" rows="5" name="adresa"></textarea> </td>
+                   <td><textarea cols="30" rows="5" name="adresa" required></textarea> </td>
                 </tr>
                
                   <tr>
@@ -74,14 +75,21 @@ include("lidhja.php");
             $adresa=$_POST['adresa'];
             if($fjalekalim==$fjalekalim2){
         $fjalekalim=md5($fjalekalim);
-            $anketim=" insert into klient (perdorues,emri,mbiemri,posta,fjalekalim,adresa) value ('$perdorues','$emri','$mbiemri','$posta','$fjalekalim','$adresa')";
+        $anketim1="SELECT * FROM klient WHERE perdorues='$perdorues'";
+             $rezultati= mysqli_query($db,$anketim1);
+             
+            if (mysqli_num_rows($rezultati)==1) {
+             echo "<script> alert('Ky emer perdoruesi eshte i zene')</script>";
+    }
+    
+            else{ $anketim=" insert into klient (perdorues,emri,mbiemri,posta,fjalekalim,adresa) value ('$perdorues','$emri','$mbiemri','$posta','$fjalekalim','$adresa')";
              mysqli_query($db,$anketim);
-             header("location:index.php");
+             header("location:index.php");}
  
           
              }
             else{
-               echo"Fjalekalimet nuk perputhen.";}
+               echo"<script> alert('Fjalekalimet nuk perputhen')</script>";}
                }
 
             ?>
